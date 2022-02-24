@@ -1,11 +1,20 @@
-<h1><%= article.title %> <small>by <%= article.author.getFullName() %></small></h1>
+<h1>
+    <%= article.title %> <small>by <%= article.author.getFullName() %></small>
+</h1>
 
 <p>
-  <strong><%= moment(article.createdAt).calendar() %></strong>
+    <strong><%= moment(article.createdAt).calendar() %></strong>
 </p>
 
 <p><%= article.content %></p>
 
 <hr />
-
+<h2>Comments</h2>
+<% if (article.comments) { %> <% article.comments.forEach(element => { %>
+<div class="well">
+    <p><%= element.content %></p>
+    <br />
+    <p>-<%= element.name %></p>
+</div>
+<% }) %> <% } %>
 <a href="/">&larr; Back Home</a>
