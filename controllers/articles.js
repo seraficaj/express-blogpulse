@@ -45,4 +45,22 @@ router.get('/:id', (req, res) => {
   })
 })
 
+// // PUT - Edit an article 
+// router.put('/:id', (req, res) => {
+//   db.article.update(
+//     req.body,
+//     {
+//       where: { id: req.params.id }
+//     }
+//   )
+//   .then((updatedRows) => {
+//     console.log('success', updatedRows)
+//     res.redirect('/articles/' + req.params.id)
+//   })
+//   .catch((err) => {
+//     console.log(err)
+//     res.render('main/404')
+//   })
+// })
+
 module.exports = router
